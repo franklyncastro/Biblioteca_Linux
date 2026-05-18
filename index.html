@@ -260,6 +260,101 @@
 
   <div class="commands-grid" id="commandsGrid">
 
+    <a href="#locate" class="command-card admin">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <h3>locate</h3>
+    </a>
+
+    <a href="#headtail" class="command-card texto">
+      <i class="fa-solid fa-align-left"></i>
+      <h3>head / tail</h3>
+    </a>
+
+    <a href="#nice" class="command-card procesos">
+      <i class="fa-solid fa-gauge-high"></i>
+      <h3>nice</h3>
+    </a>
+
+    <a href="#vmstat" class="command-card monitoreo">
+      <i class="fa-solid fa-chart-line"></i>
+      <h3>vmstat</h3>
+    </a>
+
+    <a href="#iostat" class="command-card monitoreo">
+      <i class="fa-solid fa-hard-drive"></i>
+      <h3>iostat</h3>
+    </a>
+
+    <a href="#traceroute" class="command-card red">
+      <i class="fa-solid fa-route"></i>
+      <h3>traceroute</h3>
+    </a>
+
+    <a href="#dig" class="command-card red">
+      <i class="fa-solid fa-globe"></i>
+      <h3>dig</h3>
+    </a>
+
+    <a href="#curlwget" class="command-card red">
+      <i class="fa-solid fa-download"></i>
+      <h3>curl / wget</h3>
+    </a>
+
+    <a href="#lsblk" class="command-card storage">
+      <i class="fa-solid fa-database"></i>
+      <h3>lsblk</h3>
+    </a>
+
+    <a href="#fdisk" class="command-card storage">
+      <i class="fa-solid fa-compact-disc"></i>
+      <h3>fdisk</h3>
+    </a>
+
+    <a href="#mount" class="command-card storage">
+      <i class="fa-solid fa-plug"></i>
+      <h3>mount</h3>
+    </a>
+
+    <a href="#dfdu" class="command-card storage">
+      <i class="fa-solid fa-chart-pie"></i>
+      <h3>df / du</h3>
+    </a>
+
+    <a href="#mkfsfsck" class="command-card storage">
+      <i class="fa-solid fa-toolbox"></i>
+      <h3>mkfs / fsck</h3>
+    </a>
+
+    <a href="#ufw" class="command-card seguridad">
+      <i class="fa-solid fa-shield-halved"></i>
+      <h3>ufw</h3>
+    </a>
+
+    <a href="#fail2ban" class="command-card seguridad">
+      <i class="fa-solid fa-user-lock"></i>
+      <h3>fail2ban</h3>
+    </a>
+
+    <a href="#sudoers" class="command-card seguridad">
+      <i class="fa-solid fa-user-shield"></i>
+      <h3>sudoers</h3>
+    </a>
+
+    <a href="#cron" class="command-card automatizacion">
+      <i class="fa-solid fa-clock"></i>
+      <h3>cron</h3>
+    </a>
+
+    <a href="#bashscripting" class="command-card automatizacion">
+      <i class="fa-solid fa-code"></i>
+      <h3>Bash Script</h3>
+    </a>
+
+    <a href="#docker" class="command-card contenedores">
+      <i class="fa-brands fa-docker"></i>
+      <h3>Docker</h3>
+    </a>
+
     <a href="#passwd" class="command-card usuarios">
       <i class="fa-solid fa-lock"></i>
       <h3>passwd</h3>
@@ -663,6 +758,236 @@ journalctl -xe
   </div>
 
   <div class="code-block">man journalctl</div>
+</section>
+
+<section class="section" id="locate">
+  <h2>locate</h2>
+  <p>Busca archivos rápidamente usando una base de datos indexada.</p>
+
+  <div class="code-block">
+locate passwd
+locate .conf
+sudo updatedb
+  </div>
+
+  <div class="code-block">man locate</div>
+</section>
+
+<section class="section" id="headtail">
+  <h2>head y tail</h2>
+  <p>Muestran inicio o final de archivos.</p>
+
+  <div class="code-block">
+head archivo.txt
+tail archivo.txt
+tail -f /var/log/auth.log
+  </div>
+
+  <table>
+    <tr><th>Argumento</th><th>Descripción</th></tr>
+    <tr><td>-f</td><td>Monitoreo en tiempo real.</td></tr>
+    <tr><td>-n</td><td>Mostrar cantidad específica de líneas.</td></tr>
+  </table>
+</section>
+
+<section class="section" id="nice">
+  <h2>nice</h2>
+  <p>Permite ejecutar procesos con prioridad personalizada.</p>
+
+  <div class="code-block">
+nice -n 10 proceso
+renice -5 20417
+  </div>
+</section>
+
+<section class="section" id="vmstat">
+  <h2>vmstat</h2>
+  <p>Muestra estadísticas de memoria, CPU y procesos.</p>
+
+  <div class="code-block">
+vmstat
+vmstat 2
+  </div>
+</section>
+
+<section class="section" id="iostat">
+  <h2>iostat</h2>
+  <p>Monitorea rendimiento de discos y CPU.</p>
+
+  <div class="code-block">
+iostat
+iostat -xz 2
+  </div>
+</section>
+
+<section class="section" id="traceroute">
+  <h2>traceroute</h2>
+  <p>Muestra la ruta que siguen los paquetes hasta un destino.</p>
+
+  <div class="code-block">
+traceroute google.com
+  </div>
+</section>
+
+<section class="section" id="dig">
+  <h2>dig</h2>
+  <p>Herramienta avanzada para consultas DNS.</p>
+
+  <div class="code-block">
+dig google.com
+dig MX gmail.com
+  </div>
+</section>
+
+<section class="section" id="curlwget">
+  <h2>curl y wget</h2>
+  <p>Descarga de contenido y pruebas HTTP.</p>
+
+  <div class="code-block">
+curl ifconfig.me
+wget https://archivo.zip
+curl -I google.com
+  </div>
+</section>
+
+<section class="section" id="lsblk">
+  <h2>lsblk</h2>
+  <p>Muestra discos y particiones.</p>
+
+  <div class="code-block">
+lsblk
+lsblk -f
+  </div>
+</section>
+
+<section class="section" id="fdisk">
+  <h2>fdisk</h2>
+  <p>Administración de particiones.</p>
+
+  <div class="code-block">
+sudo fdisk -l
+sudo fdisk /dev/sdb
+  </div>
+</section>
+
+<section class="section" id="mount">
+  <h2>mount y umount</h2>
+  <p>Monta y desmonta sistemas de archivos.</p>
+
+  <div class="code-block">
+sudo mount /dev/sdb1 /mnt
+sudo umount /mnt
+  </div>
+</section>
+
+<section class="section" id="dfdu">
+  <h2>df y du</h2>
+  <p>Uso de almacenamiento y espacio.</p>
+
+  <div class="code-block">
+df -h
+du -sh /home/*
+  </div>
+</section>
+
+<section class="section" id="mkfsfsck">
+  <h2>mkfs y fsck</h2>
+  <p>Crear y reparar sistemas de archivos.</p>
+
+  <div class="code-block">
+sudo mkfs.ext4 /dev/sdb1
+sudo fsck /dev/sdb1
+  </div>
+</section>
+
+<section class="section" id="ufw">
+  <h2>ufw</h2>
+  <p>Firewall simplificado para Linux.</p>
+
+  <div class="code-block">
+sudo ufw enable
+sudo ufw allow 22
+sudo ufw status
+  </div>
+</section>
+
+<section class="section" id="fail2ban">
+  <h2>fail2ban</h2>
+  <p>Protección contra ataques de fuerza bruta.</p>
+
+  <div class="code-block">
+sudo systemctl status fail2ban
+sudo fail2ban-client status
+  </div>
+</section>
+
+<section class="section" id="sudoers">
+  <h2>sudoers</h2>
+  <p>Control de privilegios sudo.</p>
+
+  <div class="code-block">
+sudo visudo
+  </div>
+
+  <div class="code-block">
+luna ALL=(ALL:ALL) ALL
+  </div>
+</section>
+
+<section class="section" id="cron">
+  <h2>cron</h2>
+  <p>Automatización de tareas programadas.</p>
+
+  <div class="code-block">
+crontab -e
+  </div>
+
+  <div class="code-block">
+0 2 * * * /home/scripts/backup.sh
+  </div>
+</section>
+
+<section class="section" id="bashscripting">
+  <h2>Bash Scripting</h2>
+  <p>Automatización usando Bash.</p>
+
+  <div class="code-block">
+#!/bin/bash
+
+for user in ana maria carlos
+ do
+   echo $user
+ done
+  </div>
+
+  <div class="code-block">
+if [ -f archivo.txt ]
+ then
+   echo "Existe"
+ fi
+  </div>
+</section>
+
+<section class="section" id="docker">
+  <h2>Docker</h2>
+  <p>Plataforma de contenedores.</p>
+
+  <div class="code-block">
+docker ps
+docker run nginx
+docker logs container_id
+docker exec -it container_id bash
+docker compose up -d
+  </div>
+
+  <table>
+    <tr><th>Comando</th><th>Descripción</th></tr>
+    <tr><td>docker ps</td><td>Lista contenedores.</td></tr>
+    <tr><td>docker run</td><td>Ejecuta contenedor.</td></tr>
+    <tr><td>docker exec</td><td>Entrar a contenedor.</td></tr>
+    <tr><td>docker logs</td><td>Ver logs.</td></tr>
+    <tr><td>docker compose</td><td>Orquestación multi-contenedor.</td></tr>
+  </table>
 </section>
 
 <section class="section" id="apt">
